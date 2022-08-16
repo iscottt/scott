@@ -5,12 +5,16 @@
         v-model:selectedKeys="selectedKeys"
         theme="light"
         mode="horizontal"
-        :style="{ lineHeight: '64px' }"
+        :style="{ lineHeight: '64px', flex: 1 }"
         class="!bg-transparent !border-none"
       >
-        <a-menu-item key="1" class="font-bin" style="font-size: 18px">Skill</a-menu-item>
-        <a-menu-item key="2" class="font-bin" style="font-size: 18px">Experience</a-menu-item>
-        <a-menu-item key="3" class="font-bin" style="font-size: 18px">About Me</a-menu-item>
+        <a-menu-item key="0" class="font-title" style="font-size: 18px;"
+          >Scott</a-menu-item
+        >
+        <a-menu-item key="1" class="font-title" style="font-size: 18px">技能</a-menu-item>
+        <a-menu-item key="2" class="font-title" style="font-size: 18px">经历</a-menu-item>
+        <a-menu-item key="2" class="font-title" style="font-size: 18px">作品</a-menu-item>
+        <a-menu-item key="3" class="font-title" style="font-size: 18px">关于我</a-menu-item>
       </a-menu>
 
       <div class="actions h-full flex items-center">
@@ -48,7 +52,7 @@
 <script lang="ts" setup>
 import { Ref } from 'vue';
 
-const selectedKeys: Ref<string[]> = ref(['2']);
+const selectedKeys: Ref<string[]> = ref(['0']);
 </script>
 
 <style scoped lang="less">

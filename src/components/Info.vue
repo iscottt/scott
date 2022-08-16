@@ -77,7 +77,7 @@
   font-weight: 700;
   width: 450px;
   position: relative;
-  animation: debounce 1s steps(3) infinite;
+  animation: debounce 2s steps(3) infinite;
   /** font style **/
   font-size: 50px;
   font-style: italic;
@@ -110,12 +110,12 @@
   height: var(--shake-height);
   overflow: hidden;
   background: transparent;
-  animation: shake-body 1s steps(4) infinite;
+  animation: shake-body 2s steps(4) infinite;
   animation-delay: var(--shake-delay);
 }
 
 .douyin-style-font.shake .douyin-style-title {
-  animation: shake-content 1s steps(4) infinite;
+  animation: shake-content 2s steps(4) infinite;
   animation-delay: var(--shake-delay);
 }
 
