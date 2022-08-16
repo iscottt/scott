@@ -8,9 +8,7 @@
         :style="{ lineHeight: '64px', flex: 1 }"
         class="!bg-transparent !border-none"
       >
-        <a-menu-item key="0" class="font-title" style="font-size: 18px;"
-          >Scott</a-menu-item
-        >
+        <a-menu-item key="0" class="font-title" style="font-size: 18px">Scott</a-menu-item>
         <a-menu-item key="1" class="font-title" style="font-size: 18px">技能</a-menu-item>
         <a-menu-item key="2" class="font-title" style="font-size: 18px">经历</a-menu-item>
         <a-menu-item key="2" class="font-title" style="font-size: 18px">作品</a-menu-item>

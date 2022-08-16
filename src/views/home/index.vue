@@ -36,10 +36,15 @@
 <script lang="ts" setup>
 import Pictorial from '@/components/Pictorial.vue';
 import Info from '@/components/Info.vue';
-const loading = ref(true);
+const loading = ref(false);
 onMounted(() => {
+  const notFirst = sessionStorage.getItem('notFirst');
+  loading.value = notFirst ? false : true;
   setTimeout(() => {
     loading.value = false;
+    if (!notFirst) {
+      sessionStorage.setItem('notFirst', 'true');
+    }
   }, 2000);
 });
 </script>
