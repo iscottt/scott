@@ -129,7 +129,7 @@ const isMobile = computed(() => {
 
 <style scoped lang="less">
 .skill-container {
-  @apply flex items-center justify-evenly;
+  @apply w-1300px mx-auto flex items-center justify-evenly;
   .skill-list {
     @apply w-600px flex items-center mt-20 justify-start flex-wrap;
     .item {
@@ -225,11 +225,14 @@ const isMobile = computed(() => {
 }
 @media (max-width: 768px) {
   .skill-container {
-    @apply flex-col-reverse;
+    @apply flex-col-reverse w-full;
     .skill-list {
-      @apply !w-full !justify-center;
+      @apply !w-full !justify-evenly;
       .item {
-        @apply !mr-0;
+        @apply mr-0 w-160px mb-5;
+        .title{
+          font-size: 12px;
+        }
       }
     }
   }

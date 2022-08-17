@@ -1,27 +1,58 @@
 <template>
   <a-layout class="h-full layout">
-    <a-layout-header v-if="!isMobile" class="!bg-transparent !relative !z-10 !px-50 flex items-center justify-between">
+    <a-layout-header
+      class="!bg-transparent !relative !z-10 flex items-center justify-between"
+      :class="isMobile ? '!px-2 w-full' : '!px-50'"
+    >
       <a-menu
         v-model:selectedKeys="selectedKeys"
         theme="light"
         mode="horizontal"
-        :style="{ lineHeight: '64px', flex: 1 }"
+        :style="{ lineHeight: '64px', width: '100%' }"
         class="!bg-transparent !border-none"
+        :class="isMobile ? 'flex justify-center' : ''"
       >
-        <a-menu-item key="/home" @click="router.push('/home')" class="font-dou" style="font-size: 18px"
+        <a-menu-item
+          key="/home"
+          @click="router.push('/home')"
+          class="font-dou menu-item"
+          :class="isMobile ? '!px-3' : ''"
+          :style="{ 'font-size': isMobile ? '10px' : '18px' }"
           >Scott</a-menu-item
         >
-        <a-menu-item key="/skills" @click="router.push('/skills')" class="font-dou" style="font-size: 18px"
+        <a-menu-item
+          key="/skills"
+          @click="router.push('/skills')"
+          class="font-dou"
+          :class="isMobile ? '!px-3' : ''"
+          :style="{ 'font-size': isMobile ? '10px' : '18px' }"
           >技能</a-menu-item
         >
-        <a-menu-item key="/experience" @click="router.push('/experience')" class="font-dou" style="font-size: 18px"
+        <a-menu-item
+          key="/experience"
+          @click="router.push('/experience')"
+          class="font-dou"
+          :class="isMobile ? '!px-3' : ''"
+          :style="{ 'font-size': isMobile ? '10px' : '18px' }"
           >经历</a-menu-item
         >
-        <a-menu-item key="3" class="font-dou" style="font-size: 18px">作品</a-menu-item>
-        <a-menu-item key="4" class="font-dou" style="font-size: 18px">关于我</a-menu-item>
+        <a-menu-item
+          key="3"
+          class="font-dou"
+          :class="isMobile ? '!px-3' : ''"
+          :style="{ 'font-size': isMobile ? '10px' : '18px' }"
+          >作品</a-menu-item
+        >
+        <a-menu-item
+          key="4"
+          class="font-dou"
+          :class="isMobile ? '!px-3' : ''"
+          :style="{ 'font-size': isMobile ? '10px' : '18px' }"
+          >关于我</a-menu-item
+        >
       </a-menu>
 
-      <div class="actions h-full flex items-center">
+      <div v-if="!isMobile" class="actions h-full flex items-center">
         <a-tooltip color="#108ee9">
           <template #title>Github</template>
           <a href="https://github.com/iscottt" target="_blank" style="display: inherit; color: #0e70d5">
@@ -74,7 +105,7 @@ const isMobile = computed(() => {
 <style scoped lang="less">
 .layout {
   background: url('@/assets/images/home_bg.png') no-repeat center;
-  background-size: 100% 100%;
+  background-size: cover;
   overflow: auto;
 }
 </style>

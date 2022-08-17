@@ -30,28 +30,28 @@ const experList = [
     time: '2014/09 ~ 2017/07',
     major: '软件工程',
     desc: '大专（全日制）',
-    img: '/public/images/exper1.png',
+    img: '/images/exper1.png',
   },
   {
     title: '东华理工大学',
     time: '2021/03 ~ 2023/07',
     major: '计算机科学与技术',
     desc: '本科（非全日制）',
-    img: '/public/images/exper2.png',
+    img: '/images/exper2.png',
   },
   {
     title: '深圳智友信息科技有限公司',
     time: '2020/02 ~ 至今',
     major: '前端开发工程师',
     desc: '负责项目前端部分的工作，负责项目的技术选型和框架的搭建，负责封装公共的UI组件和功能组件',
-    img: '/public/images/exper3.png',
+    img: '/images/exper3.png',
   },
   {
     title: '杭州云嘉健康管理有限公司',
     time: '2020/02 ~ 至今',
     major: '前端开发工程师',
     desc: '负责前端部分的工作，负责搭建后台管理系统框架，研究并投入使用前沿技术',
-    img: '/public/images/exper4.png',
+    img: '/images/exper4.png',
   },
 ];
 </script>
@@ -74,6 +74,18 @@ const experList = [
     }
     .desc {
       @apply text-xs;
+    }
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    @apply w-full flex-col mt-0;
+    .item {
+      width: 80%;
+      @apply mx-auto box-border min-h-240px;
+      .title{
+        width: 100%;
+      }
     }
   }
 }
