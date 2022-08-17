@@ -1,6 +1,6 @@
 <template>
   <a-layout class="h-full layout">
-    <a-layout-header class="!bg-transparent !relative !z-10 !px-50 flex items-center justify-between">
+    <a-layout-header v-if="!isMobile" class="!bg-transparent !relative !z-10 !px-50 flex items-center justify-between">
       <a-menu
         v-model:selectedKeys="selectedKeys"
         theme="light"
@@ -48,9 +48,15 @@
 </template>
 
 <script lang="ts" setup>
+import { EnumDeviceType } from '@/enum/system';
+import { useAppStore } from '@/store';
 import { Ref } from 'vue';
-
 const selectedKeys: Ref<string[]> = ref(['0']);
+const app = useAppStore();
+// 获取设备终端判断
+const isMobile = computed(() => {
+  return app.device === EnumDeviceType.mobile;
+});
 </script>
 
 <style scoped lang="less">

@@ -224,7 +224,7 @@ const icons: any[] = [icon0Png, icon1Png, icon2Png, icon3Png, icon4Png, icon5Png
 }
 @media (max-width: 750px) {
   .pictorial-wrap {
-    font-size: 0.9rem;
+    font-size: 40px;
   }
 }
 @keyframes flutter-down {

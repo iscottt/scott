@@ -26,17 +26,31 @@
         </div>
       </div>
     </div>
-    <Info />
-    <div class="-right-62px top-0">
-      <Pictorial />
-    </div>
+    <template v-if="!isMobile">
+      <Info />
+      <div class="-right-62px top-0">
+        <Pictorial />
+      </div>
+    </template>
+    <template v-if="isMobile">
+      <Pictorial class="mt-10" />
+      <Info />
+      <div class="enter">了解更多</div>
+    </template>
   </div>
 </template>
 
 <script lang="ts" setup>
 import Pictorial from '@/components/Pictorial.vue';
 import Info from '@/components/Info.vue';
+import { EnumDeviceType } from '@/enum/system';
+import { useAppStore } from '@/store';
 const loading = ref(false);
+const app = useAppStore();
+// 获取设备终端判断
+const isMobile = computed(() => {
+  return app.device === EnumDeviceType.mobile;
+});
 onMounted(() => {
   const notFirst = sessionStorage.getItem('notFirst');
   loading.value = notFirst ? false : true;
@@ -52,6 +66,16 @@ onMounted(() => {
 <style lang="less" scoped>
 .home {
   @apply h-full flex items-center justify-center py-5 mx-auto px-50;
+}
+.enter {
+  @apply bg-[#20a0ff] block text-white px-15px mt-5 rounded-[20px] text-[14px] font-bold;
+  box-shadow: 0 8px 10px rgb(32 160 255 / 30%);
+  line-height: 38px;
+}
+@media screen and (max-width: 756px) {
+  .home {
+    @apply h-full items-center justify-start py-5 mx-auto px-2 flex flex-col;
+  }
 }
 
 .loading {

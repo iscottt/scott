@@ -1,5 +1,5 @@
 <template>
-  <div class="home-info !-mt-30">
+  <div class="home-info">
     <div class="douyin-style">
       <div class="douyin-style-font">
         <div class="douyin-style-title" data-title="Scott">
@@ -22,24 +22,46 @@
         </div>
       </div>
     </div>
-    <div class="font-bin font-bold text-6xl mt-15">
-      <span class="font-title text-2xl flex-1 font-thin">🌱 不知名前端攻城狮 ，</span
-      ><span class="font-bin text-xl">iscottt@163.com <span class="dot">...</span></span>
+    <div v-if="!isMobile" class="font-bin font-bold text-6xl mt-15 w-full">
+      <span class="font-title text-2xl flex-1 font-thin">🌱 不知名前端攻城狮 <span class="dot">...</span></span>
+    </div>
+    <div v-if="isMobile" class="font-bin font-bold text-6xl mt-15 w-full flex items-center justify-center flex-col">
+      <div class="font-title text-2xl w-full flex-1 font-thin pt-15 pl-10">
+        🌱 不知名前端攻城狮 <span class="dot">...</span>
+      </div>
     </div>
   </div>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import { EnumDeviceType } from '@/enum/system';
+import { useAppStore } from '@/store';
+const app = useAppStore();
+// 获取设备终端判断
+const isMobile = computed(() => {
+  return app.device === EnumDeviceType.mobile;
+});
+</script>
 
 <style scoped lang="less">
 .home-info {
-  @apply w-520px overflow-hidden;
+  @apply w-520px overflow-hidden  !-mt-30;
 }
-
+@media (max-width: 768px) {
+  .home-info {
+    @apply w-full overflow-hidden !mt-0;
+  }
+  .douyin-style {
+    @apply ml-22 mt-5;
+  }
+  .info {
+    text-align: center;
+  }
+}
 .dot {
   animation: dot 2s infinite step-start;
   display: inline-block;
-  width: 0.3em;
+  width: 0.5em;
   vertical-align: bottom; /*始终让省略号在文字的下面*/
   overflow: hidden;
 }
@@ -51,15 +73,15 @@
     margin-right: 1.5em;
   }
   33% {
-    width: 0.3em;
+    width: 0.5em;
     margin-right: 1em;
   }
   66% {
-    width: 0.6em;
+    width: 1em;
     margin-right: 0.5em;
   }
   100% {
-    width: 1em;
+    width: 1.5em;
     margin-right: 0;
   }
 }
@@ -75,7 +97,7 @@
 
 .douyin-style-font {
   font-weight: 700;
-  width: 450px;
+  width: 100%;
   position: relative;
   animation: debounce 2s steps(3) infinite;
   /** font style **/
