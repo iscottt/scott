@@ -8,11 +8,17 @@
         :style="{ lineHeight: '64px', flex: 1 }"
         class="!bg-transparent !border-none"
       >
-        <a-menu-item key="0" class="font-title" style="font-size: 18px">Scott</a-menu-item>
-        <a-menu-item key="1" class="font-title" style="font-size: 18px">技能</a-menu-item>
-        <a-menu-item key="2" class="font-title" style="font-size: 18px">经历</a-menu-item>
-        <a-menu-item key="2" class="font-title" style="font-size: 18px">作品</a-menu-item>
-        <a-menu-item key="3" class="font-title" style="font-size: 18px">关于我</a-menu-item>
+        <a-menu-item key="/home" @click="router.push('/home')" class="font-dou" style="font-size: 18px"
+          >Scott</a-menu-item
+        >
+        <a-menu-item key="/skills" @click="router.push('/skills')" class="font-dou" style="font-size: 18px"
+          >技能</a-menu-item
+        >
+        <a-menu-item key="/experience" @click="router.push('/experience')" class="font-dou" style="font-size: 18px"
+          >经历</a-menu-item
+        >
+        <a-menu-item key="3" class="font-dou" style="font-size: 18px">作品</a-menu-item>
+        <a-menu-item key="4" class="font-dou" style="font-size: 18px">关于我</a-menu-item>
       </a-menu>
 
       <div class="actions h-full flex items-center">
@@ -42,7 +48,11 @@
       </div>
     </a-layout-header>
     <a-layout-content>
-      <router-view></router-view>
+      <router-view v-slot="{ Component, route }">
+        <transition name="fade-slide" mode="out-in" appear>
+          <component :is="Component" v-if="app.reloadFlag" :key="route.path" />
+        </transition>
+      </router-view>
     </a-layout-content>
   </a-layout>
 </template>
@@ -51,7 +61,9 @@
 import { EnumDeviceType } from '@/enum/system';
 import { useAppStore } from '@/store';
 import { Ref } from 'vue';
-const selectedKeys: Ref<string[]> = ref(['0']);
+const route = useRoute();
+const router = useRouter();
+const selectedKeys: Ref<string[]> = ref([route.fullPath]);
 const app = useAppStore();
 // 获取设备终端判断
 const isMobile = computed(() => {
@@ -63,5 +75,6 @@ const isMobile = computed(() => {
 .layout {
   background: url('@/assets/images/home_bg.png') no-repeat center;
   background-size: 100% 100%;
+  overflow: auto;
 }
 </style>

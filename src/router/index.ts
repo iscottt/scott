@@ -1,5 +1,5 @@
 import type { App } from 'vue';
-import Layout from '@/layout/index.vue'
+import Layout from '@/layout/index.vue';
 import { createRouter, createWebHashHistory } from 'vue-router';
 import { createRouterGuard } from './guard';
 export const constantRoutes = [
@@ -11,16 +11,32 @@ export const constantRoutes = [
       title: 'Scott',
     },
     component: Layout,
-    children:[
+    children: [
       {
-        name:"home",
+        name: 'home',
         path: '/home',
         meta: {
           title: 'Scott',
         },
-        component:() => import('@/views/home/index.vue')
-      }
-    ]
+        component: () => import('@/views/home/index.vue'),
+      },
+      {
+        name: 'skills',
+        path: '/skills',
+        meta: {
+          title: '技能',
+        },
+        component: () => import('@/views/skills/index.vue'),
+      },
+      {
+        name: 'experience',
+        path: '/experience',
+        meta: {
+          title: '经历',
+        },
+        component: () => import('@/views/experience/index.vue'),
+      },
+    ],
   },
 ];
 

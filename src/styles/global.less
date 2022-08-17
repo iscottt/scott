@@ -1,6 +1,7 @@
-
-html, body, #app {
-	height: 100%;
+html,
+body,
+#app {
+  height: 100%;
 }
 
 @font-face {
@@ -8,12 +9,25 @@ html, body, #app {
   src: url(../assets/fonts/din-bold.otf);
 }
 @font-face {
-  font-family: TITLE;
-  src: url(../assets/fonts/title.TTF);
+  font-family: DTITLE;
+  src: url(../assets/fonts/dtitle.otf);
 }
 
-
 /* 隐藏滚动条 */
-*::-webkit-scrollbar{
+*::-webkit-scrollbar {
   display: none; /* Chrome Safari */
+}
+
+/* fade-slide */
+.fade-slide-leave-active,
+.fade-slide-enter-active {
+  transition: all 0.3s;
+}
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateX(-30px);
+}
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
 }

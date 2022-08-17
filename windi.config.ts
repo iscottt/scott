@@ -45,8 +45,8 @@ export default defineConfig({
   theme: {
     extend: {
       fontFamily: {
-        title: 'TITLE',
         bin: 'BIN',
+        dou: 'DTITLE',
       },
       colors: {
         primary: 'var(--primary-color)',
@@ -74,7 +74,7 @@ export default defineConfig({
         dark: '#18181c',
         'dark-base': '#101014',
         content: '#f7f9f8',
-        'main': '#f3f7fe',
+        main: '#f3f7fe',
       },
       textColor: {
         'black-base': '#333639',

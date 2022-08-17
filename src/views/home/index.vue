@@ -65,7 +65,7 @@ onMounted(() => {
 
 <style lang="less" scoped>
 .home {
-  @apply h-full flex items-center justify-center py-5 mx-auto px-50;
+  @apply h-full flex items-center justify-center py-5 mx-auto px-50 font-dou;
 }
 .enter {
   @apply bg-[#20a0ff] block text-white px-15px mt-5 rounded-[20px] text-[14px] font-bold;

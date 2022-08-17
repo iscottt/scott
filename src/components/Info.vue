@@ -23,10 +23,10 @@
       </div>
     </div>
     <div v-if="!isMobile" class="font-bin font-bold text-6xl mt-15 w-full">
-      <span class="font-title text-2xl flex-1 font-thin">🌱 不知名前端攻城狮 <span class="dot">...</span></span>
+      <span class="font-dou text-2xl flex-1 font-thin">🌱 不知名前端攻城狮 <span class="dot">...</span></span>
     </div>
     <div v-if="isMobile" class="font-bin font-bold text-6xl mt-15 w-full flex items-center justify-center flex-col">
-      <div class="font-title text-2xl w-full flex-1 font-thin pt-15 pl-10">
+      <div class="font-dou text-xl w-full flex-1 font-thin pt-15 pl-10">
         🌱 不知名前端攻城狮 <span class="dot">...</span>
       </div>
     </div>
@@ -73,15 +73,15 @@ const isMobile = computed(() => {
     margin-right: 1.5em;
   }
   33% {
-    width: 0.5em;
+    width: 0.2em;
     margin-right: 1em;
   }
   66% {
-    width: 1em;
+    width: 0.45em;
     margin-right: 0.5em;
   }
   100% {
-    width: 1.5em;
+    width: 1em;
     margin-right: 0;
   }
 }
@@ -105,7 +105,7 @@ const isMobile = computed(() => {
   font-style: italic;
   font-weight: bold;
   letter-spacing: 3px;
-  font-family: TITLE;
+  font-family: DTITLE;
 }
 
 .douyin-style-font .douyin-style-title {
