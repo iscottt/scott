@@ -18,11 +18,11 @@
           </li>
           <li class="!mb-2">
             文章封面生成
-            <a href="https://cover.ethan.pub" target="_blank"> http://cover.ethan.pub </a>
+            <a href="http://cover.ethan.pub/" target="_blank"> http://cover.ethan.pub </a>
           </li>
           <li class="!mb-2">
             MySql生成器
-            <a href="https://sql.ethan.pub" target="_blank"> http://sql.ethan.pub </a>
+            <a href="http://sql.ethan.pub/#/" target="_blank"> http://sql.ethan.pub </a>
           </li>
         </ul>
       </a-typography-paragraph>
