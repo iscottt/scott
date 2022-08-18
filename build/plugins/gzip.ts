@@ -7,4 +7,5 @@ export default compressPlugin({
   threshold: 10240, //压缩前最小文件大小
   algorithm: 'gzip', //压缩算法
   ext: '.gz', //文件类型
+  filter: /\.(js|mjs|png|json|css|html)$/i,
 });
