@@ -35,7 +35,6 @@
     <template v-if="isMobile">
       <Pictorial class="mt-10" />
       <Info />
-      <div class="enter">了解更多</div>
     </template>
   </div>
 </template>

@@ -37,15 +37,17 @@
           >经历</a-menu-item
         >
         <a-menu-item
-          key="3"
+          key="/works"
           class="font-dou"
+          @click="router.push('/works')"
           :class="isMobile ? '!px-3' : ''"
           :style="{ 'font-size': isMobile ? '10px' : '18px' }"
           >作品</a-menu-item
         >
         <a-menu-item
-          key="4"
+          key="/about"
           class="font-dou"
+          @click="router.push('/about')"
           :class="isMobile ? '!px-3' : ''"
           :style="{ 'font-size': isMobile ? '10px' : '18px' }"
           >关于我</a-menu-item

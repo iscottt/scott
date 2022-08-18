@@ -36,6 +36,30 @@ export const constantRoutes = [
         },
         component: () => import('@/views/experience/index.vue'),
       },
+      {
+        name: 'works',
+        path: '/works',
+        meta: {
+          title: '作品',
+        },
+        component: () => import('@/views/works/index.vue'),
+      },
+      {
+        name: 'works-detail',
+        path: '/works-detail',
+        meta: {
+          title: '作品详情',
+        },
+        component: () => import('@/views/works/detail.vue'),
+      },
+      {
+        name: 'about',
+        path: '/about',
+        meta: {
+          title: '关于我',
+        },
+        component: () => import('@/views/about/index.vue'),
+      },
     ],
   },
 ];

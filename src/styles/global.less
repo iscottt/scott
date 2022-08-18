@@ -10,7 +10,7 @@ body,
 }
 @font-face {
   font-family: DTITLE;
-  src: url(../assets/fonts/dtitle.otf);
+  src: url('https://ethanwp.oss-cn-shenzhen.aliyuncs.com/dtitle.woff2');
 }
 
 /* 隐藏滚动条 */
@@ -30,4 +30,19 @@ body,
 .fade-slide-leave-to {
   opacity: 0;
   transform: translateX(30px);
+}
+
+.ant-image-preview-img-wrapper::before {
+  height: 20% !important;
+}
+
+.ant-carousel .slick-dots-bottom {
+  bottom: 0 !important;
+}
+
+.ant-carousel .slick-dots li button {
+  background: #000 !important;
+}
+.ant-carousel .slick-dots li.slick-active button {
+  background: #1890ff !important;
 }

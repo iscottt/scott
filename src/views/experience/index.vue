@@ -9,16 +9,15 @@
       }"
     >
       <img :src="item.img" alt="" />
-      <div class="title">{{ item.title }}</div>
-      <div class="time">{{ item.time }}</div>
-      <div class="desc">
-        <p>
-          专业：<span class="ml-2">{{ item.major }}</span>
-        </p>
-        <p class="mt-2">
-          学历：<span class="ml-2">{{ item.desc }}</span>
-        </p>
-      </div>
+      <a-typography>
+        <a-typography-title class="!text-lg mt-2">{{ item.title }}</a-typography-title>
+        <a-typography-paragraph class="text-sm font-bold">
+          <div class="font-bin text-base my-1">{{ item.time }}</div>
+          <div>{{ item.desc }}</div>
+          <div class="my-1">专业：{{ item.major }}</div>
+          <div>学历：{{ item.desc }}</div>
+        </a-typography-paragraph>
+      </a-typography>
     </div>
   </div>
 </template>
@@ -41,7 +40,7 @@ const experList = [
   },
   {
     title: '深圳智友信息科技有限公司',
-    time: '2020/02 ~ 至今',
+    time: '2017/02 ~ 2019/12',
     major: '前端开发工程师',
     desc: '负责项目前端部分的工作，负责项目的技术选型和框架的搭建，负责封装公共的UI组件和功能组件',
     img: '/images/exper3.png',
@@ -62,7 +61,7 @@ const experList = [
   .item {
     opacity: 0;
     animation: itemEnter 0.5s ease-in-out alternate forwards;
-    @apply flex text-dark-100 items-start justify-start min-h-300px overflow-auto flex-col flex-1 p-5 font-dou;
+    @apply flex text-dark-100 items-start justify-start min-h-300px overflow-auto flex-col flex-1 p-5;
     img {
       @apply w-88px h-88px mb-5;
     }
@@ -70,7 +69,7 @@ const experList = [
       @apply text-lg w-200px;
     }
     .time {
-      @apply text-sm my-2;
+      @apply text-sm my-2 font-bin;
     }
     .desc {
       @apply text-xs;
@@ -83,7 +82,10 @@ const experList = [
     .item {
       width: 80%;
       @apply mx-auto box-border min-h-240px;
-      .title{
+      img {
+        @apply w-44px h-44px mb-1;
+      }
+      .title {
         width: 100%;
       }
     }

@@ -14,7 +14,7 @@
         <a-progress :showInfo="false" :strokeColor="item.color" :percent="item.percent" />
       </div>
     </div>
-    <div class="kitchen">
+    <div class="kitchen" v-if="!isMobile">
       <div class="banner">
         <div class="bg" style="transform: translate(0px, 0px); opacity: 1">
           <img
@@ -131,12 +131,11 @@ const isMobile = computed(() => {
 .skill-container {
   @apply w-1300px mx-auto flex items-center justify-evenly;
   .skill-list {
-    @apply w-600px flex items-center mt-20 justify-start flex-wrap;
+    @apply w-600px flex items-center mt-20 justify-start flex-wrap overflow-hidden;
     .item {
       opacity: 0;
       animation: itemEnter 0.5s ease-in-out alternate forwards;
-      overflow: hidden;
-      @apply w-260px bg-white rounded-md mr-10 mb-12 flex flex-col items-start justify-center p-5 relative;
+      @apply w-260px bg-white overflow-hidden rounded-md mr-10 mb-12 flex flex-col items-start justify-center p-5 relative;
       &:after {
         content: '';
         border-radius: 100%;
@@ -230,7 +229,7 @@ const isMobile = computed(() => {
       @apply !w-full !justify-evenly;
       .item {
         @apply mr-0 w-160px mb-5;
-        .title{
+        .title {
           font-size: 12px;
         }
       }
