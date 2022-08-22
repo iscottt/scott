@@ -26,8 +26,8 @@
       <span class="font-dou text-2xl flex-1 font-thin">🌱 不知名前端攻城狮 <span class="dot">...</span></span>
     </div>
     <div v-if="isMobile" class="font-bin font-bold text-6xl mt-15 w-full flex items-center justify-center flex-col">
-      <div class="font-dou text-xl w-full flex-1 font-thin pt-15 pl-10">
-        🌱 不知名前端攻城狮 <span class="dot">...</span>
+      <div class="font-dou text-xl flex-1 font-thin pt-15 w-full text-center">
+        🌱 不知名前端攻城狮
       </div>
     </div>
   </div>
@@ -49,40 +49,13 @@ const isMobile = computed(() => {
 }
 @media (max-width: 768px) {
   .home-info {
-    @apply w-full overflow-hidden !mt-0;
+  @apply ! w-full overflow-hidden ! mt-0 flex items-center flex-col justify-center;
   }
   .douyin-style {
-    @apply ml-22 mt-5;
+  @apply mt-5 w-full;
   }
   .info {
     text-align: center;
-  }
-}
-.dot {
-  animation: dot 2s infinite step-start;
-  display: inline-block;
-  width: 0.5em;
-  vertical-align: bottom; /*始终让省略号在文字的下面*/
-  overflow: hidden;
-}
-
-@keyframes dot {
-  /*动态改变显示宽度, 但始终让总占据空间不变, 避免抖动*/
-  0% {
-    width: 0;
-    margin-right: 1.5em;
-  }
-  33% {
-    width: 0.2em;
-    margin-right: 1em;
-  }
-  66% {
-    width: 0.45em;
-    margin-right: 0.5em;
-  }
-  100% {
-    width: 1em;
-    margin-right: 0;
   }
 }
 @media (max-width: 1440px) {
@@ -93,10 +66,10 @@ const isMobile = computed(() => {
 
 .douyin-style {
   position: relative;
+  text-align: center;
 }
 
 .douyin-style-font {
-  font-weight: 700;
   width: 100%;
   position: relative;
   animation: debounce 2s steps(3) infinite;
@@ -106,6 +79,7 @@ const isMobile = computed(() => {
   font-weight: bold;
   letter-spacing: 3px;
   font-family: DTITLE;
+  text-align: center;
 }
 
 .douyin-style-font .douyin-style-title {
@@ -118,7 +92,8 @@ const isMobile = computed(() => {
 .douyin-style-font .douyin-style-title:before {
   position: absolute;
   top: -2px;
-  left: -2px;
+  left: 50%;
+  transform: translateX(-50%);
   color: #333;
   opacity: 0.8;
   z-index: 2;

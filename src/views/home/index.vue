@@ -52,7 +52,7 @@ const isMobile = computed(() => {
 });
 onMounted(() => {
   const notFirst = sessionStorage.getItem('notFirst');
-  loading.value = notFirst ? false : true;
+  loading.value = !notFirst;
   setTimeout(() => {
     loading.value = false;
     if (!notFirst) {
@@ -91,7 +91,7 @@ onMounted(() => {
   width: 150px;
   height: 150px;
   background: transparent;
-  box-shadow: 0px 0px 0px 1000px rgba(255, 255, 255, 0.67), 0px 0px 19px 0px rgba(0, 0, 0, 0.16) inset;
+  box-shadow: 0 0 0 1000px rgba(255, 255, 255, 0.67), 0 0 19px 0 rgba(0, 0, 0, 0.16) inset;
   border-radius: 100%;
   z-index: -1;
   position: absolute;
@@ -109,7 +109,6 @@ onMounted(() => {
   position: absolute;
   left: 0;
   right: 0;
-  top: 0;
   bottom: 0;
   margin: auto;
 }
@@ -142,7 +141,6 @@ onMounted(() => {
   height: 50px;
   border-radius: 100%;
   background: white;
-  position: absolute;
   position: absolute;
   left: 0;
   right: 0;
@@ -182,7 +180,6 @@ onMounted(() => {
   border-radius: 100%;
   background: white;
   position: absolute;
-  position: absolute;
   left: 0;
   right: 0;
   top: 0;
@@ -221,7 +218,6 @@ onMounted(() => {
   height: 30px;
   border-radius: 100%;
   background: white;
-  position: absolute;
   position: absolute;
   left: 0;
   right: 0;
