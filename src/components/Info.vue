@@ -34,8 +34,9 @@
 </template>
 
 <script lang="ts" setup>
-import { EnumDeviceType } from '@/enum/system';
-import { useAppStore } from '@/store';
+import {EnumDeviceType} from '@/enum/system';
+import {useAppStore} from '@/store';
+
 const app = useAppStore();
 // 获取设备终端判断
 const isMobile = computed(() => {
@@ -45,19 +46,36 @@ const isMobile = computed(() => {
 
 <style scoped lang="less">
 .home-info {
-  @apply w-520px overflow-hidden  !-mt-30;
+@apply w-520px overflow-hidden ! -mt-30;
 }
+
 @media (max-width: 768px) {
   .home-info {
   @apply ! w-full overflow-hidden ! mt-0 flex items-center flex-col justify-center;
   }
+
   .douyin-style {
   @apply mt-5 w-full;
   }
+
   .info {
     text-align: center;
   }
+
+  .douyin-style {
+    text-align: center;
+  }
+
+  .douyin-style-font {
+    text-align: center;
+
+    .douyin-style-title:before {
+      left: 50% !important;
+      transform: translateX(-50%);
+    }
+  }
 }
+
 @media (max-width: 1440px) {
   .home-info {
     width: 450px;
@@ -66,7 +84,6 @@ const isMobile = computed(() => {
 
 .douyin-style {
   position: relative;
-  text-align: center;
 }
 
 .douyin-style-font {
@@ -79,7 +96,6 @@ const isMobile = computed(() => {
   font-weight: bold;
   letter-spacing: 3px;
   font-family: DTITLE;
-  text-align: center;
 }
 
 .douyin-style-font .douyin-style-title {
@@ -92,8 +108,7 @@ const isMobile = computed(() => {
 .douyin-style-font .douyin-style-title:before {
   position: absolute;
   top: -2px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: -3px;
   color: #333;
   opacity: 0.8;
   z-index: 2;
