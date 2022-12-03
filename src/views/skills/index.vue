@@ -157,10 +157,10 @@ const isMobile = computed(() => {
         background-color: #909399;
       }
       .title {
-        @apply font-dou text-sm;
+        @apply font-dou text-xl;
       }
       .desc {
-        @apply text-dark-50 mt-2 mb-1 text-xs font-dou;
+        @apply text-dark-50 mt-2 mb-1 text-sm font-dou;
       }
     }
   }
