@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@ant-design/icons-vue': ^6.1.0
+  '@types/node': ^18.11.10
   '@vitejs/plugin-vue': ^3.0.3
   '@vitejs/plugin-vue-jsx': ^2.0.0
   '@vueuse/core': ^9.1.0
@@ -27,6 +28,7 @@ specifiers:
 
 dependencies:
   '@ant-design/icons-vue': registry.npmmirror.com/@ant-design/icons-vue/6.1.0_vue@3.2.37
+  '@types/node': registry.npmmirror.com/@types/node/18.11.10
   '@vitejs/plugin-vue-jsx': registry.npmmirror.com/@vitejs/plugin-vue-jsx/2.0.0_vite@3.0.7+vue@3.2.37
   '@vueuse/core': registry.npmmirror.com/@vueuse/core/9.1.0_vue@3.2.37
   ant-design-vue: registry.npmmirror.com/ant-design-vue/3.2.11_vue@3.2.37
@@ -574,6 +576,12 @@ packages:
     dependencies:
       core-js: registry.npmmirror.com/core-js/3.24.1
       nanopop: registry.npmmirror.com/nanopop/2.1.0
+    dev: false
+
+  registry.npmmirror.com/@types/node/18.11.10:
+    resolution: {integrity: sha512-juG3RWMBOqcOuXC643OAdSA525V44cVgGV6dUDuiFtss+8Fk5x1hI93Rsld43VeJVIeqlP9I7Fn9/qaVqoEAuQ==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@types/node/-/node-18.11.10.tgz}
+    name: '@types/node'
+    version: 18.11.10
     dev: false
 
   registry.npmmirror.com/@types/web-bluetooth/0.0.15:

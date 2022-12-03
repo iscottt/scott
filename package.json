@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@ant-design/icons-vue": "^6.1.0",
+    "@types/node": "^18.11.10",
     "@vitejs/plugin-vue-jsx": "^2.0.0",
     "@vueuse/core": "^9.1.0",
     "ant-design-vue": "^3.2.11",
