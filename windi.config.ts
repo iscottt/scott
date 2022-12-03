@@ -46,7 +46,7 @@ export default defineConfig({
     extend: {
       fontFamily: {
         bin: 'BIN',
-        dou: 'DTITLE',
+        dou: 'STITLE',
       },
       colors: {
         primary: 'var(--primary-color)',

@@ -23,19 +23,17 @@
       </div>
     </div>
     <div v-if="!isMobile" class="font-bin font-bold text-6xl mt-15 w-full">
-      <span class="font-dou text-2xl flex-1 font-thin">🌱 不知名前端攻城狮 <span class="dot">...</span></span>
+      <span class="!font-dou text-2xl flex-1 font-thin">🌱 不知名前端攻城狮 <span class="dot">...</span></span>
     </div>
     <div v-if="isMobile" class="font-bin font-bold text-6xl mt-15 w-full flex items-center justify-center flex-col">
-      <div class="font-dou text-xl flex-1 font-thin pt-15 w-full text-center">
-        🌱 不知名前端攻城狮
-      </div>
+      <div class="!font-dou text-xl flex-1 font-thin pt-15 w-full text-center">🌱 不知名前端攻城狮</div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import {EnumDeviceType} from '@/enum/system';
-import {useAppStore} from '@/store';
+import { EnumDeviceType } from '@/enum/system';
+import { useAppStore } from '@/store';
 
 const app = useAppStore();
 // 获取设备终端判断
@@ -46,16 +44,16 @@ const isMobile = computed(() => {
 
 <style scoped lang="less">
 .home-info {
-@apply w-520px overflow-hidden ! -mt-30;
+  @apply w-520px overflow-hidden ! -mt-30;
 }
 
 @media (max-width: 768px) {
   .home-info {
-  @apply ! w-full overflow-hidden ! mt-0 flex items-center flex-col justify-center;
+    @apply ! w-full overflow-hidden ! mt-0 flex items-center flex-col justify-center;
   }
 
   .douyin-style {
-  @apply mt-5 w-full;
+    @apply mt-5 w-full;
   }
 
   .info {
@@ -95,7 +93,7 @@ const isMobile = computed(() => {
   font-style: italic;
   font-weight: bold;
   letter-spacing: 3px;
-  font-family: DTITLE;
+  font-family: STITLE;
 }
 
 .douyin-style-font .douyin-style-title {

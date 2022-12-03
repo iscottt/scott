@@ -10,9 +10,19 @@ body,
 }
 @font-face {
   font-family: DTITLE;
+  src: url('https://ethanwp.oss-cn-shenzhen.aliyuncs.com/download/22ffb1db.ttf');
+}
+@font-face {
+  font-family: STITLE;
   src: url('https://ethanwp.oss-cn-shenzhen.aliyuncs.com/dtitle.woff2');
 }
-
+* {
+  font-family: DTITLE !important;
+  color: #475669;
+}
+.ant-typography {
+  color: #475669 !important;
+}
 /* 隐藏滚动条 */
 *::-webkit-scrollbar {
   display: none; /* Chrome Safari */
@@ -45,4 +55,17 @@ body,
 }
 .ant-carousel .slick-dots li.slick-active button {
   background: #1890ff !important;
+}
+mark {
+  background: rgba(31, 139, 255, 0.1) !important;
+  border-radius: 5px;
+  color: rgba(31, 139, 255, 1);
+  padding: 3px 5px !important;
+  text-shadow: 0 2px 2px rgba(31, 139, 255, 0.3), 0 -1px #fff;
+}
+
+a {
+  color: rgba(31, 139, 255, 1) !important;
+  text-decoration: none;
+  text-shadow: 2px 2px 2px rgba(31, 139, 255, 0.3) !important;
 }
