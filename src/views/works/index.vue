@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <a-row class="row-main" :gutter="20">
+    <a-row :gutter="20">
       <a-col
         class="item-fa"
         :xs="24"
@@ -107,7 +107,7 @@ const showMore = (item) => {
 
 <style scoped lang="less">
 .container {
-  @apply w-1300px flex flex-wrap items-start justify-center mx-auto mt-12;
+  @apply w-1300px mx-auto mt-12 px-30px;
   .item {
     opacity: 0;
     animation: itemEnter 0.5s ease-in-out alternate forwards;

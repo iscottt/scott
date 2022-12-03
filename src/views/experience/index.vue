@@ -115,7 +115,7 @@ const experList = [
 }
 @media (max-width: 768px) {
   .container {
-    @apply w-full flex-col mt-0;
+    @apply w-full flex-col mt-20px;
   }
 }
 </style>
