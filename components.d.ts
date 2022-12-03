@@ -22,6 +22,7 @@ declare module '@vue/runtime-core' {
     ATypographyText: typeof import('ant-design-vue/es')['TypographyText']
     ATypographyTitle: typeof import('ant-design-vue/es')['TypographyTitle']
     GithubFilled: typeof import('@ant-design/icons-vue')['GithubFilled']
+    HistoryOutlined: typeof import('@ant-design/icons-vue')['HistoryOutlined']
     IeCircleFilled: typeof import('@ant-design/icons-vue')['IeCircleFilled']
     Info: typeof import('./src/components/Info.vue')['default']
     Pictorial: typeof import('./src/components/Pictorial.vue')['default']

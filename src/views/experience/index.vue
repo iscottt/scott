@@ -1,24 +1,78 @@
 <template>
   <div class="container">
-    <div
-      class="item"
-      v-for="(item, index) in experList"
-      :key="item.title"
-      :style="{
-        animationDelay: index * 0.1 + 's',
-      }"
-    >
-      <img :src="item.img" alt="" />
-      <a-typography>
-        <a-typography-title class="!text-lg mt-2">{{ item.title }}</a-typography-title>
-        <a-typography-paragraph class="text-sm font-bold">
-          <div class="font-bin text-base my-1">{{ item.time }}</div>
-          <div>{{ item.desc }}</div>
-          <div class="my-1">专业：{{ item.major }}</div>
-          <div>学历：{{ item.desc }}</div>
-        </a-typography-paragraph>
-      </a-typography>
-    </div>
+    <a-row :gutter="20">
+      <a-col
+        class="item-fa"
+        :xs="24"
+        :sm="12"
+        :md="8"
+        :lg="8"
+        :xl="6"
+        v-for="(item, index) in experList"
+        :key="item.title"
+      >
+        <div
+          class="post-item card flex flex-col items-center"
+          :style="{
+            animationDelay: index * 0.1 + 's',
+          }"
+        >
+          <a class="img">
+            <span class="date">
+              <HistoryOutlined />
+              {{ item.time }}
+            </span>
+          </a>
+          <div class="title">{{ item.title }}</div>
+          <div class="metas" :class="`color-${index + 1}`">{{ item.desc }}</div>
+          <div class="tags">
+            <a class="color-4" v-for="_ in item.major" :key="_">{{ _ }}</a>
+          </div>
+          <!-- <a href="/miui-v5-wallpapper-repaint" class="go">Get it</a> -->
+          <div class="desc">
+            <span class="likes">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                class="svg-icon"
+                height="14"
+                data-v-21003d5e=""
+              >
+                <path
+                  d="M244 84L255.1 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 0 232.4 0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84C243.1 84 244 84.01 244 84L244 84zM255.1 163.9L210.1 117.1C188.4 96.28 157.6 86.4 127.3 91.44C81.55 99.07 48 138.7 48 185.1V190.9C48 219.1 59.71 246.1 80.34 265.3L256 429.3L431.7 265.3C452.3 246.1 464 219.1 464 190.9V185.1C464 138.7 430.4 99.07 384.7 91.44C354.4 86.4 323.6 96.28 301.9 117.1L255.1 163.9z"
+                ></path>
+              </svg>
+            </span>
+            <span class="comments"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 512 512"
+                class="svg-icon"
+                height="14"
+                data-v-21003d5e=""
+              >
+                <path
+                  d="M144 208C126.3 208 112 222.2 112 239.1C112 257.7 126.3 272 144 272s31.1-14.25 31.1-32S161.8 208 144 208zM256 207.1c-17.75 0-31.1 14.25-31.1 32s14.25 31.1 31.1 31.1s31.1-14.25 31.1-31.1S273.8 207.1 256 207.1zM368 208c-17.75 0-31.1 14.25-31.1 32s14.25 32 31.1 32c17.75 0 31.99-14.25 31.99-32C400 222.2 385.8 208 368 208zM256 31.1c-141.4 0-255.1 93.12-255.1 208c0 47.62 19.91 91.25 52.91 126.3c-14.87 39.5-45.87 72.88-46.37 73.25c-6.624 7-8.373 17.25-4.624 26C5.818 474.2 14.38 480 24 480c61.49 0 109.1-25.75 139.1-46.25c28.87 9 60.16 14.25 92.9 14.25c141.4 0 255.1-93.13 255.1-207.1S397.4 31.1 256 31.1zM256 400c-26.75 0-53.12-4.125-78.36-12.12l-22.75-7.125L135.4 394.5c-14.25 10.12-33.87 21.38-57.49 29c7.374-12.12 14.37-25.75 19.87-40.25l10.62-28l-20.62-21.87C69.81 314.1 48.06 282.2 48.06 240c0-88.25 93.24-160 207.1-160s207.1 71.75 207.1 160S370.8 400 256 400z"
+                ></path>
+              </svg>
+            </span>
+            <span class="views"
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 576 512"
+                class="svg-icon"
+                height="14"
+                data-v-21003d5e=""
+              >
+                <path
+                  d="M160 256C160 185.3 217.3 128 288 128C358.7 128 416 185.3 416 256C416 326.7 358.7 384 288 384C217.3 384 160 326.7 160 256zM288 336C332.2 336 368 300.2 368 256C368 211.8 332.2 176 288 176C287.3 176 286.7 176 285.1 176C287.3 181.1 288 186.5 288 192C288 227.3 259.3 256 224 256C218.5 256 213.1 255.3 208 253.1C208 254.7 208 255.3 208 255.1C208 300.2 243.8 336 288 336L288 336zM95.42 112.6C142.5 68.84 207.2 32 288 32C368.8 32 433.5 68.84 480.6 112.6C527.4 156 558.7 207.1 573.5 243.7C576.8 251.6 576.8 260.4 573.5 268.3C558.7 304 527.4 355.1 480.6 399.4C433.5 443.2 368.8 480 288 480C207.2 480 142.5 443.2 95.42 399.4C48.62 355.1 17.34 304 2.461 268.3C-.8205 260.4-.8205 251.6 2.461 243.7C17.34 207.1 48.62 156 95.42 112.6V112.6zM288 80C222.8 80 169.2 109.6 128.1 147.7C89.6 183.5 63.02 225.1 49.44 256C63.02 286 89.6 328.5 128.1 364.3C169.2 402.4 222.8 432 288 432C353.2 432 406.8 402.4 447.9 364.3C486.4 328.5 512.1 286 526.6 256C512.1 225.1 486.4 183.5 447.9 147.7C406.8 109.6 353.2 80 288 80V80z"
+                ></path>
+              </svg>
+            </span>
+          </div>
+        </div>
+      </a-col>
+    </a-row>
   </div>
 </template>
 
@@ -27,29 +81,29 @@ const experList = [
   {
     title: '江西应用技术职业学院',
     time: '2014/09 ~ 2017/07',
-    major: '软件工程',
+    major: ['软件技术'],
     desc: '大专（全日制）',
     img: '/images/exper1.png',
   },
   {
     title: '东华理工大学',
     time: '2021/03 ~ 2023/07',
-    major: '计算机科学与技术',
+    major: ['计算机科学与技术'],
     desc: '本科（非全日制）',
     img: '/images/exper2.png',
   },
   {
     title: '深圳智友信息科技有限公司',
     time: '2017/02 ~ 2019/12',
-    major: '前端开发工程师',
-    desc: '负责项目前端部分的工作，负责项目的技术选型和框架的搭建，负责封装公共的UI组件和功能组件',
+    major: ['Vue', 'Typescript', 'React'],
+    desc: '前端开发工程师',
     img: '/images/exper3.png',
   },
   {
     title: '杭州云嘉健康管理有限公司',
     time: '2020/02 ~ 至今',
-    major: '前端开发工程师',
-    desc: '负责前端部分的工作，负责搭建后台管理系统框架，研究并投入使用前沿技术',
+    major: ['Vue', 'Typescript', '小程序开发'],
+    desc: '前端开发工程师',
     img: '/images/exper4.png',
   },
 ];
@@ -57,48 +111,11 @@ const experList = [
 
 <style scoped lang="less">
 .container {
-  @apply flex items-start justify-center w-full w-1300px mx-auto mt-50;
-  .item {
-    opacity: 0;
-    animation: itemEnter 0.5s ease-in-out alternate forwards;
-    @apply flex text-dark-100 items-start justify-start min-h-300px overflow-auto flex-col flex-1 p-5;
-    img {
-      @apply w-88px h-88px mb-5;
-    }
-    .title {
-      @apply text-lg w-200px;
-    }
-    .time {
-      @apply text-sm my-2 font-bin;
-    }
-    .desc {
-      @apply text-xs;
-    }
-  }
+  @apply w-full w-1300px mx-auto mt-20 px-20px;
 }
 @media (max-width: 768px) {
   .container {
     @apply w-full flex-col mt-0;
-    .item {
-      width: 80%;
-      @apply mx-auto box-border min-h-240px;
-      img {
-        @apply w-44px h-44px mb-1;
-      }
-      .title {
-        width: 100%;
-      }
-    }
-  }
-}
-@keyframes itemEnter {
-  0% {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
   }
 }
 </style>
