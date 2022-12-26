@@ -14,7 +14,7 @@
         <ul class="text-base">
           <li class="!mb-2">
             Scott的个人博客
-            <a href="https://blog.ethan.pub" target="_blank">https://blog.ethan.pub </a>
+            <a href="https://blog.ethan.pub" target="_blank">https://blog.scott-studio.cn </a>
           </li>
         </ul>
       </a-typography-paragraph>

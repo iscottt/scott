@@ -64,18 +64,8 @@
         </a-tooltip>
         <a-tooltip color="#464d6e">
           <template #title>个人博客</template>
-          <a href="https://ethan.pub" target="_blank" style="display: inherit; color: #0e70d5">
+          <a href="https://blog.scott-studio.cn" target="_blank" style="display: inherit; color: #0e70d5">
             <IeCircleFilled style="font-size: 24px" class="cursor-pointer mr-3" />
-          </a>
-        </a-tooltip>
-        <a-tooltip color="#464d6e">
-          <template #title>掘金主页</template>
-          <a
-            href="https://juejin.cn/user/3456520286121272/posts"
-            target="_blank"
-            style="display: inherit; color: #0e70d5"
-          >
-            <SlackCircleFilled style="font-size: 24px" class="cursor-pointer" />
           </a>
         </a-tooltip>
         <!-- <slack-circle-filled /> -->

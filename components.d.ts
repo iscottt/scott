@@ -28,6 +28,5 @@ declare module '@vue/runtime-core' {
     Pictorial: typeof import('./src/components/Pictorial.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
-    SlackCircleFilled: typeof import('@ant-design/icons-vue')['SlackCircleFilled']
   }
 }
